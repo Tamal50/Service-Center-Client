@@ -60,7 +60,7 @@ require('dotenv').config()
 
     return (
         <div style={{backgroundColor: 'red', height: '700px'}}>
-            <button style={{marginLeft: '600px', marginTop: '300px'}} onClick={handleSignIn}>Click To Google Login</button>
+            <button className="btn btn-primary"style={{marginLeft: '600px', marginTop: '300px'}} onClick={handleSignIn}>Click To Google Login</button>
         </div>
     );
 };

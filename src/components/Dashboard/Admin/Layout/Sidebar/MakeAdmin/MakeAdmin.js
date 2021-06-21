@@ -17,7 +17,7 @@ const MakeAdmin = () => {
 
   const handleAddAdmin = (e) => {
     e.preventDefault();
-    fetch("http://localhost:5000/addadmin", {
+    fetch("https://pure-headland-64545.herokuapp.com/addadmin", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -38,7 +38,7 @@ const MakeAdmin = () => {
 
   const [admin, setAdmin] = useState([]);
   useEffect(() =>{
-    fetch('http://localhost:5000/admin')
+    fetch('https://pure-headland-64545.herokuapp.com/admin')
     .then(res => res.json())
     .then(data => setAdmin(data));
   })

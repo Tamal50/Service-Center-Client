@@ -6,7 +6,7 @@ const ServiceDetails = (props) => {
     const service = props.service
 
     const loadProduct = (_id) => {
-        fetch(`http://localhost:5000/product/${_id}`)
+        fetch(`https://pure-headland-64545.herokuapp.com/product/${_id}`)
         .then(res => res.json())
         .then(data =>{
           console.log(data)

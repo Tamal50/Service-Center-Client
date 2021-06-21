@@ -9,7 +9,7 @@ const Oders = () => {
     const [logInUser,setLogInUser] =useContext(UserContext);
   const { register, handleSubmit, formState: { errors } } = useForm();
   const onSubmit = data => {
-    fetch('http://localhost:5000/review', {
+    fetch('https://pure-headland-64545.herokuapp.com/review', {
         method: 'POST',
         headers: {
           "Content-Type": 'application/json'

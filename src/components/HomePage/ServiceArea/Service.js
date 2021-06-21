@@ -8,7 +8,7 @@ const Service = (props) => {
 
     const [product, setProduct] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/products')
+        fetch('https://pure-headland-64545.herokuapp.com/products')
         .then(res => res.json())
         .then(data => setProduct(data));
     })

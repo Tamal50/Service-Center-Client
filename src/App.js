@@ -39,7 +39,7 @@ function App() {
         sessionStorage.setItem("token", token);
         localStorage.setItem("token", token);
         // // CHECK ADMIN
-        // fetch(`http://localhost:5000/checkadmin?email=${User.email}`)
+        // fetch(`https://pure-headland-64545.herokuapp.com/checkadmin?email=${User.email}`)
         // .then((res => res.json()))
         // .then(data => {
         //   if (data) {
@@ -79,7 +79,6 @@ useEffect(() => {
 
   return (
    <UserContext.Provider value={[logInUser, setLogInUser]}>
-     <h2>email: {logInUser?.email}</h2>
     <Router>
       <Switch>
         <Route exact path="/">

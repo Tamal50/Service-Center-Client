@@ -17,7 +17,7 @@ const AddProduct = () => {
       }
       const handleAddProduct = (e) => {
         e.preventDefault()
-           fetch('http://localhost:5000/addProduct', {
+           fetch('https://pure-headland-64545.herokuapp.com/addProduct', {
             method: 'POST',
             headers: {
               "Content-Type": 'application/json'
@@ -67,7 +67,7 @@ const AddProduct = () => {
             value={productFrom.url}
           ></input>
         </p>
-        <button type="submit">ADD Product </button>
+        <button className="btn btn-primary"type="submit">ADD Product </button>
       </form>
 
     </div>

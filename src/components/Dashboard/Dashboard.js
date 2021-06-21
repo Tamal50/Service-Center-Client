@@ -10,7 +10,7 @@ const Dashboard = () => {
     const [logInUser,setLogInUser] = useContext(UserContext)
     const [isAdmin,setIsAdmin] = useState(false)
     useEffect(() => {
-        fetch('http://localhost:5000/isAdmin', { 
+        fetch('https://pure-headland-64545.herokuapp.com/isAdmin', { 
             method: 'POST',
             headers: { 'Content-Type': 'application/json'},
             body: JSON.stringify({ email: logInUser?.email })

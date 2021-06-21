@@ -9,13 +9,10 @@ import { UserContext } from "../../App";
 
 const OderPage = (props) => {
 
-  const history = useHistory();
-
-  const { from } =  { from: { pathname: "/" } };
   const {_id} = useParams();
   const [oderProduct, setOderProduct] = useState([])
   useEffect(()=>{
-    fetch(`http://localhost:5000/product/${_id}`)
+    fetch(`https://pure-headland-64545.herokuapp.com/product/${_id}`)
     .then(res => res.json())
     .then(data => setOderProduct(data))
   })
@@ -26,7 +23,7 @@ const OderPage = (props) => {
     
     const oderDetails = {...logInUser , product: oderProduct , shipmentInfo: data , oderTime: new Date()}
     
-    fetch('http://localhost:5000/oder', {
+    fetch('https://pure-headland-64545.herokuapp.com/oder', {
       method: 'POST',
       headers: {
         "Content-Type": 'application/json'
@@ -37,7 +34,6 @@ const OderPage = (props) => {
      .then(data => {
        if(data){
          alert("Your oder successfully please pay for confirm")
-         history.replace(from);
        }
      })
     console.log(data)
@@ -49,11 +45,12 @@ const OderPage = (props) => {
         style={{ backgroundColor: "#b2cb98", height: "700px" }}
         className="col-md-6 p-5"
       >
-        <h1>Oder Details</h1>
+        <center><h1>Oder Details</h1>
+        <h1>--------------------------------------------</h1>
         <h2 >{oderProduct.name}</h2>
         <h3 >Price: ${oderProduct.price}</h3>
-        <img className="m-5" style={{height:'200px'}} src={oderProduct.url} alt=""/>
-
+        <img className="m-5" style={{height:'300px'}} src={oderProduct.url} alt=""/>
+        </center>
       </div>
       <div
         style={{ backgroundColor: "#d5c9eb", height: "700px" }}
