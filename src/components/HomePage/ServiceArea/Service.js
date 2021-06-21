@@ -1,0 +1,36 @@
+import React, { useState, useEffect } from 'react';
+import ServiceDetails from './ServiceDetails/ServiceDetails';
+
+
+
+const Service = (props) => {
+
+
+    const [product, setProduct] = useState([]);
+    useEffect(()=>{
+        fetch('http://localhost:5000/products')
+        .then(res => res.json())
+        .then(data => setProduct(data));
+    })
+
+
+    return (
+      <section>
+            <div className="mt-5">
+            <h1 style={{color: 'red', textAlign: 'center'}}>Choose your service</h1>            
+        </div>
+         <div className="d-flex justify-content-center">
+            <div className="row mt-5">
+                {
+                   product.map(service => <ServiceDetails service={service} ></ServiceDetails>)
+                }
+            </div>
+            
+      
+        </div>
+        
+      </section>
+    );
+};
+
+export default Service;
